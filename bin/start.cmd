@@ -35,7 +35,7 @@ exit /b
 REM function:
 :check
 if exist "C:\Xampp\htdocs\NaoPoint\"%~1 exit /b
-echo This script requires the TvScreen repository to be installed into C:\Xampp\htdocs\NaoPoint\%~1. & echo.
+echo This script requires the %~1 repository to be installed into C:\Xampp\htdocs\NaoPoint\%~1. & echo.
 echo Please clone it using Git from the repository https://github.com/NaoPoint/%~1. & echo.
 pause
 REM quit completely (no /b)
