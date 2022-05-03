@@ -1,5 +1,7 @@
 @echo off
 
+echo Stopping...
+
 REM set dynamic IP address
 netsh interface ip set address name="Wi-Fi" dhcp
 

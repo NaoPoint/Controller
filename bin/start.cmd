@@ -1,4 +1,9 @@
 @echo off
+
+REM prevent errors
+echo Warning: a previous setup is needed on this PC before the first execution.
+pause
+
 echo NaoPoint is executing: do not close this window!
 
 REM set static IP address
