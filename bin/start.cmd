@@ -1,8 +1,13 @@
 @echo off
 
+REM check if the repository has been downloaded
+call :check TvScreen
+call :check FlaskRequest
+
+:start
 REM prevent errors
-echo Warning: a previous setup is needed on this PC before the first execution.
-pause
+echo Note: a previous setup is needed on this PC before the first execution.
+pause & echo.
 
 echo NaoPoint is executing: do not close this window!
 
@@ -17,3 +22,15 @@ C:\Xampp\apache\bin\httpd.exe -k restart >nul 2>nul
 
 REM open map
 start "" "http://localhost/NaoPoint/TvScreen"
+
+REM prevent execution of :check
+exit /b
+
+REM function:
+:check
+if exist "C:\Xampp\htdocs\NaoPoint\"%~1 exit /b
+echo This script requires the TvScreen repository to be installed into C:\Xampp\htdocs\NaoPoint\%~1. & echo.
+echo Please clone it using Git from the repository https://github.com/NaoPoint/%~1. & echo.
+pause
+REM quit completely (no /b)
+exit
