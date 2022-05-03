@@ -38,7 +38,7 @@ exit /b
 REM function:
 
 :install
-REM install python
+REM install program
 echo %~1 is not installed. Press any key to open the installation page...
 pause >nul
 
