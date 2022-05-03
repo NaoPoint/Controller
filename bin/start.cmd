@@ -1,4 +1,5 @@
 @echo off
+title Starting NaoPoint on the main pc...
 
 REM check if the repository has been downloaded
 call :check TvScreen

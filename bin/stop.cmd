@@ -1,6 +1,7 @@
 @echo off
+title Stopping NaoPoint on the main pc...
 
-echo Stopping...
+echo NaoPoint is stopping: do not close this window!
 
 REM set dynamic IP address
 netsh interface ip set address name="Wi-Fi" dhcp

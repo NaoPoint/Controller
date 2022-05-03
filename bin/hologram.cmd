@@ -1,4 +1,5 @@
 @echo off
+title Starting NaoPoint on the secondary pc...
 
 REM check if the repository has been downloaded
 if exist "C:\Xampp\htdocs\NaoPoint\Hologram\hologram.py" goto start
@@ -26,6 +27,7 @@ if %errorlevel% equ 0 (goto execute) else (call :install VLC, XPDM1ZW6815MQM)
 echo NaoPoint is executing: close this window to stop the service! & echo.
 
 REM start hologram service
+title Executing NaoPoint on the secondary pc...
 python -u "C:\Xampp\htdocs\NaoPoint\Hologram\hologram.py"
 
 REM in case of unexpected errors (prevent execution of :install)
