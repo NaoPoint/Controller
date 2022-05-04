@@ -26,9 +26,12 @@ if %errorlevel% equ 0 (goto execute) else (call :install VLC, XPDM1ZW6815MQM)
 :execute
 echo NaoPoint is executing: close this window to stop the service! & echo.
 
+REM set static IP address if not enabled (anything starting with 192.168 and different from 100)
+netsh interface ip show address name="Wi-Fi" | findstr "Yes" >nul && netsh interface ip set address "Wi-Fi" static 192.168.1.99 255.255.255.0 192.168.1.1 1
+
 REM start hologram service
 title Executing NaoPoint on the secondary pc...
-python -u "C:\Xampp\htdocs\NaoPoint\Hologram\hologram.py"
+py -3 -u "C:\Xampp\htdocs\NaoPoint\Hologram\hologram.py"
 
 REM in case of unexpected errors (prevent execution of :install)
 echo Unknown error.
