@@ -21,7 +21,7 @@ start "NaoPoint" "C:\Xampp\htdocs\NaoPoint\FlaskRequest\flaskRequest.pml"
 :skip
 
 REM start flask server
-start "Flask Server" /MIN /d "C:\Xampp\htdocs\NaoPoint\TvScreen" python -u "ajax.py"
+start "Flask Server" /MIN /d "C:\Xampp\htdocs\NaoPoint\TvScreen" py -3 -u "ajax.py"
 
 REM run apache (and wait)
 "C:\Xampp\apache\bin\httpd.exe" -k restart >nul 2>nul
