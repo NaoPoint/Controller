@@ -20,6 +20,9 @@ tasklist /fi "IMAGENAME eq choregraphe-bin.exe" | findstr choregraphe-bin.exe >n
 start "NaoPoint" "C:\Xampp\htdocs\NaoPoint\FlaskRequest\flaskRequest.pml"
 :skip
 
+REM ensure modules are installed
+py -3 -m pip install requests flask flask_cors waitress >nul 2>nul
+
 REM start flask server
 start "Flask Server" /MIN /d "C:\Xampp\htdocs\NaoPoint\TvScreen" py -3 -u "ajax.py"
 
