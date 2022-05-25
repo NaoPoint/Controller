@@ -15,7 +15,7 @@ pause & echo.
 
 :python
 REM check if python is installed
-python --version >nul 2>nul
+py -3 --version >nul 2>nul
 if %errorlevel% equ 0 (goto vlc) else (call :install Python, 9PJPW5LDXLZ5)
 
 :vlc
